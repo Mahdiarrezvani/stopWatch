@@ -49,6 +49,8 @@ function Stop() {
 }
 
 function Reset() {
+    second = 0;
+    hundredOfSecond = 0;
     Stop();
     stopwatch.innerHTML = "00 : 00";
 }
