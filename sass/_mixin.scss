@@ -1,0 +1,6 @@
+@mixin styleButtons($fontSize:'') {
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: $fontSize;
+    background-color: transparent;
+}

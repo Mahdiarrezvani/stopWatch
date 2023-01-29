@@ -1,0 +1,59 @@
+@import 'mixin';
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #000;
+}
+
+.container {
+    background-color: black;
+    color: white;
+    font-size: 19px;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    text-transform: uppercase;
+    // 
+    div {
+        margin-bottom: 20px;
+    }
+    //
+    .btn-container {
+        button {
+            @include styleButtons(17px);
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            color: white;
+            border: 1px solid white;
+            padding: 14px 60px;
+            border-radius: 7px;
+        }
+    }
+}
+
+@media screen and (min-width:552px) {
+    .container {
+        height: 250px;
+        font-size: 30px;
+        width: 600px;
+        margin: auto;
+        //
+        .stopwatch {
+            font-size: 25px;
+        }
+        //
+        .btn-container {
+            display: flex;
+            justify-content: space-evenly;
+            //
+            button {
+                width: 28%;
+                margin: 0;
+            }
+        }
+    }
+}

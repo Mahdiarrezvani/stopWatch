@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #000;
+}
+
+.container {
+  background-color: black;
+  color: white;
+  font-size: 19px;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  text-transform: uppercase;
+}
+
+.container div {
+  margin-bottom: 20px;
+}
+
+.container .btn-container button {
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: 17px;
+  background-color: transparent;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  color: white;
+  border: 1px solid white;
+  padding: 14px 60px;
+  border-radius: 7px;
+}
+
+@media screen and (min-width: 552px) {
+  .container {
+    height: 250px;
+    font-size: 30px;
+    width: 600px;
+    margin: auto;
+  }
+  .container .stopwatch {
+    font-size: 25px;
+  }
+  .container .btn-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .container .btn-container button {
+    width: 28%;
+    margin: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
