@@ -2,38 +2,35 @@ let btnStart = document.querySelector('.start');
 let btnStop = document.querySelector('.stop');
 let btnReset = document.querySelector('.reset');
 let stopwatch = document.querySelector('.stopwatch');
-let second = 0;
-let hundredOfSecond = 0;
 let timer;
-// let minute = 0;
+let hundredOfSecond = '00';
+let second = '00';
+let minute = '00';
+let hour = '00';
 let isTimer = false;
 
 function timerFunction() {
     timer = setInterval(function() {
         hundredOfSecond++;
-        if (hundredOfSecond >= 60) {
-            hundredOfSecond = '0';
+        hundredOfSecond < 10 ? hundredOfSecond = '0' + hundredOfSecond : "";
+        if (hundredOfSecond >= 100) {
+            hundredOfSecond = 0;
             second++;
+            second < 10 ? second = '0' + second : "";
         }
-        if (hundredOfSecond < 10) {
-            hundredOfSecond = "0" + hundredOfSecond;
+        if (second >= 60) {
+            second = 0;
+            minute++;
+            minute < 10 ? minute = '0' + minute : "";
         }
-        stopwatch.innerHTML = second + ' : ' + hundredOfSecond;
-        if (second < 10) {
-            stopwatch.innerHTML = "0" + second + ' : ' + hundredOfSecond;
+        if (minute >= 60) {
+            minute = 0;
+            hour++;
+            hour < 10 ? hour = '0' + hour : "";
         }
-        // if (second >= 60) {
-        //     minute++;
-        //     second = 0;
-        //     stopwatch.innerHTML = minute + " : " + second + ' : ' + hundredOfSecond;
-        // }
-        // if (minute < 10) {
-        //     stopwatch.innerHTML = "0" + minute + " : " + second + ' : ' + hundredOfSecond;
-        // } else {
-        //     stopwatch.innerHTML = minute + " : " + second + ' : ' + hundredOfSecond;
-        // }
-
-    }, 1 / 1000);
+        stopwatch.innerHTML = minute + " : " + second + " . " + hundredOfSecond;
+        hour > 0 ? stopwatch.innerHTML = hour + " : " + minute + " : " + second + " . " + hundredOfSecond : '';
+    }, 1);
 };
 
 function Start() {
@@ -49,10 +46,12 @@ function Stop() {
 }
 
 function Reset() {
-    second = 0;
-    hundredOfSecond = 0;
+    hour = "00";
+    minute = "00";
+    second = "00";
+    hundredOfSecond = "00";
     Stop();
-    stopwatch.innerHTML = "00 : 00";
+    stopwatch.innerHTML = "00 : 00 . 00";
 }
 btnStart.addEventListener('click', Start);
 btnStop.addEventListener('click', Stop);
